@@ -17,9 +17,36 @@ public class MouseController {
 		}
 	}
 	
+	
+	public static void main(String[] args) {
+		MouseController c = new MouseController();
+		c.clickLeft();
+		c.clickRight();
+	}
+	
 	public void clickLeft() {
-		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		// 不兼容
+//		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+//		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		
+		robot.mousePress(InputEvent.BUTTON1_MASK);
+		robot.mouseRelease(InputEvent.BUTTON1_MASK);
+		
+	}
+	
+	// c++ 实现 
+//	public native void clickLeft();
+	
+//	public native void clickRight();
+	
+	
+	public void clickRight() {
+		// 不兼容
+//		robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
+//		robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
+		
+		robot.mousePress(InputEvent.BUTTON3_MASK);
+		robot.mouseRelease(InputEvent.BUTTON3_MASK);
 	}
 	
 	public void dbClick() {
@@ -27,11 +54,6 @@ public class MouseController {
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-	}
-	
-	public void clickRight() {
-		robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
-		robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
 	}
 	
 	public void move(int x, int y) {

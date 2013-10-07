@@ -3,21 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ydpp</groupId>
   <artifactId>touch</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>touch Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-    	<groupId>javax.servlet</groupId>
-    	<artifactId>servlet-api</artifactId>
-    	<version>2.5</version>
+    	<groupId>com.ydpp</groupId>
+    	<artifactId>jetty-server</artifactId>
+    	<version>1.0</version>
     </dependency>
   </dependencies>
   <build>
