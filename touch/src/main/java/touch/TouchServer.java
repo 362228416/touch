@@ -16,6 +16,7 @@ public class TouchServer {
 		Context context = new Context(); 
 		server.addHandler(context);;
 		context.addServlet(TouchServlet.class, "/");
+		context.addServlet(CloseServlet.class, "/close");
 		server.start();
 	}
 
