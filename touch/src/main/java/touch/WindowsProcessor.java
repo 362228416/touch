@@ -27,16 +27,27 @@ public class WindowsProcessor {
 		});
 		map.put("move", new Action(){
 			public void execute(WindowsMessage message) {
-				int x = (int) message.x * -1;
-				int y = (int) message.y * -1;
+				int x = (int) message.x;
+				int y = (int) message.y;
 				controller.move(x, y);
 			}
 		});
 		map.put("scroll", new Action(){
 			public void execute(WindowsMessage message) {
-				
+				controller.scroll((int) message.y);
 			}
 		});
+		map.put("go", new Action(){
+			public void execute(WindowsMessage message) {
+				controller.go();
+			}
+		});
+		map.put("back", new Action(){
+			public void execute(WindowsMessage message) {
+				controller.back();
+			}
+		});
+		
 	}
 	
 	public static void process(WindowsMessage message) {

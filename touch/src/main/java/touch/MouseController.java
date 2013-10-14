@@ -5,6 +5,7 @@ import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 
 public class MouseController {
 	private Robot robot;
@@ -19,10 +20,15 @@ public class MouseController {
 	
 	
 	public static void main(String[] args) {
-		System.load("C:/Users/itachi/Documents/Visual Studio 2010/Projects/tdll/tdll/x64/Debug/tdll.dll");
+//		System.load("C:/Users/itachi/Documents/Visual Studio 2010/Projects/tdll/tdll/x64/Debug/tdll.dll");
 		MouseController c = new MouseController();
-		c.clickLeft();
-		c.clickRight();
+//		c.clickLeft();
+//		c.clickRight();
+		
+//		c.scroll(-1);
+		c.back();
+		c.go();
+		
 	}
 	// c++ 实现 
 //	public native void clickLeft();
@@ -70,7 +76,26 @@ public class MouseController {
 		robot.mouseMove(x, y);
 	}
 	
-	public void scroll(int x) {
-		robot.mouseWheel(x);
+	public void scroll(int y) {
+		robot.mouseWheel(y);
+		System.out.println("滚动：" + y);
+	}
+
+
+	public void go() {
+		System.out.println("前进");
+		robot.keyPress(KeyEvent.VK_ALT);
+		robot.keyPress(KeyEvent.VK_RIGHT);
+		robot.keyRelease(KeyEvent.VK_RIGHT);
+		robot.keyRelease(KeyEvent.VK_ALT);
+	}
+
+
+	public void back() {
+		System.out.println("后退");
+		robot.keyPress(KeyEvent.VK_ALT);
+		robot.keyPress(KeyEvent.VK_LEFT);
+		robot.keyRelease(KeyEvent.VK_LEFT);
+		robot.keyRelease(KeyEvent.VK_ALT);
 	}
 }
